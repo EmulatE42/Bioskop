@@ -39,5 +39,16 @@ public class Korisnik {
     @Column(name = "tipKorisnika")
     private char tipKorisnika;
 
-
+    @Override
+    public String toString() {
+        return "Korisnik{" +
+                "id=" + id +
+                ", korisnickoIme='" + korisnickoIme + '\'' +
+                ", email='" + email + '\'' +
+                ", lozinka='" + lozinka + '\'' +
+                ", ime='" + ime + '\'' +
+                ", prezime='" + prezime + '\'' +
+                ", tipKorisnika=" + tipKorisnika +
+                '}';
+    }
 }
