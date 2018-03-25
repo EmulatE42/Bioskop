@@ -25,6 +25,17 @@ export class LoginUserService {
     return this.http.post('http://localhost:8080/login', params, httpOptions);
   }
 
+  updatePassword(email: string, lozinka: string)
+  {
+    var param = JSON.stringify(email + ";" + lozinka);
+    return this.http.put("http://localhost:8080/updatePassword", param, httpOptions);
+  }
+
+  getAllUsers()
+  {
+    return this.http.get('http://localhost:8080/getAllUsers');
+  }
+
   save(k: Korisnik) {
 
     var params = JSON.stringify(k);

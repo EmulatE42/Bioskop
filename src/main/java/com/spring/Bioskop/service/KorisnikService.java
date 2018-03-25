@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 @Service
 public class KorisnikService {
@@ -51,5 +52,14 @@ public class KorisnikService {
 
     }
 
+    public List<Korisnik> getAll() {
+        return korisnikRepository.findAll();
+    }
+
+    public void updatePassword(String email, String lozinka)
+    {
+        lozinka = encryptAndSalt(lozinka, email);
+        korisnikRepository.updatePassword(email,lozinka);
+    }
 
 }

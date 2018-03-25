@@ -30,9 +30,10 @@ export class LoginUserComponent implements OnInit {
   proveri() {
     console.log(this.korisnik);
     if (JSON.stringify(this.korisnik) !== '{}') {
+      this.korisnik.lozinka =  this.password;
       sessionStorage.setItem('loginUser', JSON.stringify(this.korisnik));
       this.authenticationService.login(this.korisnik);
-      this.router.navigate(['/korisnik']);
+      this.router.navigate(['/user']);
 
 
     }

@@ -31,6 +31,18 @@ export class AppComponent implements OnInit {
     this.user = sessionStorage.getItem("loginUser");
     this.provera = JSON.parse(sessionStorage.getItem("loginUser"));
 
+    try {
+      if (this.provera.tipKorisnika === "k") {
+        this.putanja = '/user';
+      }
+      else {
+        this.putanja = '/menadzer';
+      }
+    }
+    catch (e) {
+    }
+
+
   }
 
   izlogovao(): void {

@@ -10,6 +10,7 @@ import {LoginUserService} from "./services/login-user.service";
 import { HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import {AuthenticationService} from "./services/authentication.service";
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {AuthenticationService} from "./services/authentication.service";
     AppComponent,
     LoginUserComponent,
     RegisterUserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import {AuthenticationService} from "./services/authentication.service";
     RouterModule.forRoot([
       {path: 'login', component: LoginUserComponent},
       {path: 'register', component: RegisterUserComponent},
-      {path: 'korisnik', component: UserProfileComponent}
+      {path: 'user', component: UserProfileComponent},
+      {path: 'changePassword', component: ChangePasswordComponent}
     ])
   ],
   providers: [LoginUserService,AuthenticationService],
