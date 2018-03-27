@@ -11,6 +11,12 @@ import { HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import {AuthenticationService} from "./services/authentication.service";
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { SearchMoviesComponent } from './components/search-movies/search-movies.component';
+import { SearchProjectionsComponent } from './components/search-projections/search-projections.component';
+import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component';
+import {MoviesService} from "./services/movies.service";
+import { NazivfilmaPipe } from './nazivfilma.pipe';
+import { ZanrFilmaPipe } from './zanr-filma.pipe';
 
 
 @NgModule({
@@ -19,7 +25,12 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
     LoginUserComponent,
     RegisterUserComponent,
     UserProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    SearchMoviesComponent,
+    SearchProjectionsComponent,
+    BuyTicketComponent,
+    NazivfilmaPipe,
+    ZanrFilmaPipe
   ],
   imports: [
     BrowserModule,
@@ -30,10 +41,14 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
       {path: 'login', component: LoginUserComponent},
       {path: 'register', component: RegisterUserComponent},
       {path: 'user', component: UserProfileComponent},
-      {path: 'changePassword', component: ChangePasswordComponent}
+      {path: 'changePassword', component: ChangePasswordComponent},
+      {path: 'user/movies', component: SearchMoviesComponent},
+      {path: 'user/tickets', component: BuyTicketComponent},
+      {path: 'user/projections', component: SearchProjectionsComponent}
+
     ])
   ],
-  providers: [LoginUserService,AuthenticationService],
+  providers: [LoginUserService,AuthenticationService,MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

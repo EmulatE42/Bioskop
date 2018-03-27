@@ -40,7 +40,7 @@ public class KorisnikController {
 
     @CrossOrigin
     @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Korisnik>> register() {
+    public ResponseEntity<List<Korisnik>> getAllUsers() {
         List<Korisnik> users = this.korisnikService.getAll();
         System.out.println(users.size());
         return new ResponseEntity(users != null ? users : "{}", HttpStatus.OK);

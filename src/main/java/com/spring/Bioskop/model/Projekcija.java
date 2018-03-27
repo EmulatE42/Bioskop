@@ -26,6 +26,10 @@ public class Projekcija {
     @Column(name = "datumProjekcije")
     private String datumProjekcije;
 
+    @Column(name = "nazivFilma")
+    private String nazivFilma;
+
+
     @Column(name = "cena")
     private int cena;
 

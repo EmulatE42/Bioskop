@@ -16,3 +16,17 @@ export class Korisnik
 
   ) {}
 }
+
+
+export class Film
+{
+  constructor( public id: number,
+               public naziv : string,
+               public zanr : string,
+               public godinaProizvodnje : number,
+               public trajanje : number,
+               public zemljaPorekla : string,
+               public opis : string
+
+  ) {}
+}
