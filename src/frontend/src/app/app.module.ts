@@ -17,6 +17,10 @@ import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component
 import {MoviesService} from "./services/movies.service";
 import { NazivfilmaPipe } from './nazivfilma.pipe';
 import { ZanrFilmaPipe } from './zanr-filma.pipe';
+import {ProjectionsService} from "./services/projections.service";
+import { NazivfilmaProjekcijaPipe } from './nazivfilma-projekcija.pipe';
+import { ManagerProfileComponent } from './components/manager-profile/manager-profile.component';
+import { MakenewmovieComponent } from './components/makenewmovie/makenewmovie.component';
 
 
 @NgModule({
@@ -30,7 +34,10 @@ import { ZanrFilmaPipe } from './zanr-filma.pipe';
     SearchProjectionsComponent,
     BuyTicketComponent,
     NazivfilmaPipe,
-    ZanrFilmaPipe
+    ZanrFilmaPipe,
+    NazivfilmaProjekcijaPipe,
+    ManagerProfileComponent,
+    MakenewmovieComponent
   ],
   imports: [
     BrowserModule,
@@ -44,11 +51,14 @@ import { ZanrFilmaPipe } from './zanr-filma.pipe';
       {path: 'changePassword', component: ChangePasswordComponent},
       {path: 'user/movies', component: SearchMoviesComponent},
       {path: 'user/tickets', component: BuyTicketComponent},
-      {path: 'user/projections', component: SearchProjectionsComponent}
+      {path: 'user/projections', component: SearchProjectionsComponent},
+      {path: 'manager', component: ManagerProfileComponent},
+      {path: 'manager/addmovie', component: MakenewmovieComponent}
+      //
 
     ])
   ],
-  providers: [LoginUserService,AuthenticationService,MoviesService],
+  providers: [LoginUserService,AuthenticationService,MoviesService,ProjectionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Projekcija} from "../../models";
+import {ProjectionsService} from "../../services/projections.service";
 
 @Component({
   selector: 'app-search-projections',
@@ -7,8 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchProjectionsComponent implements OnInit {
 
-  constructor() { }
+  projs: Projekcija[];
 
+  constructor(public projectionsService: ProjectionsService) {
+
+    this.projectionsService.getAllPro().subscribe((data: Projekcija[]) => this.projs = data,() => this.vidi());
+
+  }
+  vidi()
+  {
+    console.log(this.projs)
+  }
   ngOnInit() {
   }
 

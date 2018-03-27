@@ -1,5 +1,6 @@
 package com.spring.Bioskop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,7 @@ public class Projekcija {
     @Column(name = "projekcijaID", unique = true, nullable = false)
     private Long id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "projekcija", cascade = CascadeType.ALL)
     public List<Karta> karte;
 

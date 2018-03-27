@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
         this.putanja = '/user';
       }
       else {
-        this.putanja = '/menadzer';
+        this.putanja = '/manager';
       }
     }
     catch (e) {

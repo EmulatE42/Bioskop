@@ -1,4 +1,5 @@
 package com.spring.Bioskop.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,7 @@ public class Sala {
     @Column(name = "maksimalnoSediste")
     private char maksimalnoSediste;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
     private List<Projekcija> projekcije;
 }
