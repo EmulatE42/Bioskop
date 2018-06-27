@@ -20,21 +20,15 @@ public class FilmController {
 
 
 
-    @CrossOrigin
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> konj() {
-        //System.out.println("DOBIO SAM " + k);
-        String f = "asd";
-        return new ResponseEntity(f != null ? f : "{}", HttpStatus.OK);
+    @GetMapping("/")
+    public String index() {
+        return "Hello there! I'm running.";
     }
 
 
-    @CrossOrigin
-    @RequestMapping(value = "/favicon.ico", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> konj2() {
-        //System.out.println("DOBIO SAM " + k);
-        String f = "asd";
-        return new ResponseEntity(f != null ? f : "{}", HttpStatus.OK);
+    @GetMapping("/favicon.ico")
+    public String index2() {
+        return "Hello there! I'm running.";
     }
 
 
