@@ -21,6 +21,24 @@ public class FilmController {
 
 
     @CrossOrigin
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> konj() {
+        //System.out.println("DOBIO SAM " + k);
+        String f = "asd";
+        return new ResponseEntity(f != null ? f : "{}", HttpStatus.OK);
+    }
+
+
+    @CrossOrigin
+    @RequestMapping(value = "/favicon.ico", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> konj2() {
+        //System.out.println("DOBIO SAM " + k);
+        String f = "asd";
+        return new ResponseEntity(f != null ? f : "{}", HttpStatus.OK);
+    }
+
+
+    @CrossOrigin
     @RequestMapping(value = "/saveMovie", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Film> saveMovie(@RequestBody Film k) {
         //System.out.println("DOBIO SAM " + k);
